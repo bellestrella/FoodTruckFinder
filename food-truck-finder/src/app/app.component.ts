@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Food Truck Finger';
+  title = 'Food Truck Finder';
   subTitle = 'finding food trucks for folks';
 }

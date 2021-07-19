@@ -1,2 +1,62 @@
 <p>A place for Food Trucks!</p>
 <!-- Need an actual dashboard -->
+<div class="full" id="map">
+
+</div>
+
+<div [ngSwitch]="key">
+
+
+  <div class="full" id="menu1" *ngSwitchCase="'Rosy'">
+    <h3>Rosy's menu</h3>
+    <table>
+      <thead>
+      <td>Food Name</td>
+      <td>Ingredients?</td>
+      <td>Price?</td>
+      <td>Uhhh who knows</td>
+      </thead>
+      <tr><td>Roses</td><td>Rose water</td><td>4$</td><td>Smell the roses</td></tr>
+    </table>
+  </div>
+
+  <div class="full" id="menu2" *ngSwitchCase="'Craft'">
+    <h3>Craft's Menu</h3>
+    <table>
+      <thead>
+      <td>Food Name</td>
+      <td>Ingredients?</td>
+      <td>Price?</td>
+      <td>Uhhh who knows</td>
+      </thead>
+      <tr><td>Crafts concoction</td><td>Craftiness</td><td>1$</td><td>craftsy</td></tr>
+    </table>
+  </div>
+  <div class="full" id="menu3" *ngSwitchCase="'Valen'">
+    <h3>Valens Menu</h3>
+    <table>
+      <thead>
+      <td>Food Name</td>
+      <td>Ingredients?</td>
+      <td>Price?</td>
+      <td>Uhhh who knows</td>
+      </thead>
+      <tr><td>Valentinos</td><td>Mystery</td><td>99$</td><td>yep</td></tr>
+    </table>
+  </div>
+
+  <div class="full" id="menu4" *ngSwitchCase="'Revo'">
+    <h3>Viva La Revolution Menu</h3>
+    <table>
+      <thead>
+      <td>Food Name</td>
+      <td>Ingredients?</td>
+      <td>Price?</td>
+      <td>Uhhh who knows</td>
+      </thead>
+      <tr><td>Major Revolution</td><td>Gunpowder</td><td>Freedom</td><td>?</td></tr>
+    </table>
+  </div>
+
+  <div *ngSwitchDefault>Nothing</div>
+</div>
