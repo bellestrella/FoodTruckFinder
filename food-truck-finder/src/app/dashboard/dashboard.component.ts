@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Loader} from "@googlemaps/js-api-loader";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -97,5 +98,11 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  constructor(public router: Router) { }
 
+  appl() {
+    console.log('the login button was clicked');
+    this.router.navigate(['application']);
+    // the navigate() seams to want a then() after it. not sure why.
+  }
 }
