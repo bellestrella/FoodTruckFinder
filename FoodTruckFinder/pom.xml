@@ -43,7 +43,6 @@
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc8</artifactId>
       <version>1.0</version>
-      <systemPath>C:/Users/Leo and Layla/Desktop/ojdbc8-full/ojdbc8.jar</systemPath>
     </dependency>
 
     <dependency>
