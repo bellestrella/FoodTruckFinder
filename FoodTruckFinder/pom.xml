@@ -40,15 +40,9 @@
     </dependency>
 
     <dependency>
-
-      <groupId>com.oracle.database.jdbc</groupId>
-      <artifactId>ojdbc8</artifactId>
-      <version>21.1.0.0</version>
-
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc8</artifactId>
       <version>1.0</version>
-      <systemPath>C:/Users/Leo and Layla/Desktop/ojdbc8-full/ojdbc8.jar</systemPath>
     </dependency>
 
     <dependency>
@@ -82,18 +76,6 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>2.14.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>5.2.16.RELEASE</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>1.8.13</version>  <!-- or a later version... -->
     </dependency>
 
   </dependencies>
@@ -135,3 +117,4 @@
     </pluginManagement>
   </build>
 </project>
+
