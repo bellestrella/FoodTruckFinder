@@ -34,15 +34,23 @@
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.4.10.Final" />
           <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.1" />
-          <element id="library" level="project" name="Maven: com.oracle:ojdbc14:10.2.0.4.0" />
+          <element id="library" level="project" name="Maven: com.oracle.database.jdbc:ojdbc8:21.1.0.0" />
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.14.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.14.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.16.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.13" />
         </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/FoodTruckFinder/target/FoodTruckFinder/META-INF/MANIFEST.MF" />
       </element>
+      <element id="javaee-facet-resources" facet="FoodTruckFinder/web/Web" />
       <element id="javaee-facet-resources" facet="FoodTruckFinder/web/W" />
     </root>
   </artifact>
