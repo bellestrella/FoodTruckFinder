@@ -5,7 +5,7 @@ public class Customer extends User{
     Object CreditCard;
 
     public Customer(String name, String emailAddress, String password, String[] userType, String favoriteFoodTruck, Object creditCard) {
-        super(name, emailAddress, password, userType);
+        //super(name, emailAddress, password, userType);
         this.favoriteFoodTruck = favoriteFoodTruck;
         CreditCard = creditCard;
     }
