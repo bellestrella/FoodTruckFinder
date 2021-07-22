@@ -22,11 +22,14 @@ public class Main {
         session.beginTransaction();
 
         // build instance obj
-        User user = new User ("Miguel", "email", "password", "OWNER");
-        session.save(user);
+        User u = new User ("Miguel", "email", "password", "OWNER");
+        session.save(u);
+        User u2 = new User("Ed", "myemail", "pass", "Customer");
+        session.save(u2);
 
         // build object with food truck details and saves obj
         session.save(new FoodTruck("Valentinas", "11500 Menchaca Road Austin, Texas 78748", "(512) 221-4248", "wed-sun", "BBQ", "menu"));
+        session.save(new FoodTruck("Pizza", "42 Wallaby Way, Sydney", "(512) 55555", "closed", "pizza", "menu"));
         // get the Transaction instance associated with this session and commits to db
         session.getTransaction().commit();
 
