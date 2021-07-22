@@ -1,4 +1,7 @@
 .full{
   width: 400px;
   height: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
 }
