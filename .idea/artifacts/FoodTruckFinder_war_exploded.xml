@@ -51,6 +51,7 @@
         <element id="file-copy" path="$PROJECT_DIR$/FoodTruckFinder/target/FoodTruckFinder/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="FoodTruckFinder/web/Web" />
+      <element id="javaee-facet-resources" facet="FoodTruckFinder/web/W" />
     </root>
   </artifact>
 </component>
