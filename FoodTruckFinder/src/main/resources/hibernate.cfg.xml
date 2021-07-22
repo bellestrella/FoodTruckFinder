@@ -1,25 +1,26 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <property name="connection.url">jdbc:oracle:thin:@trkdb.cmtkalryuwt4.us-east-2.rds.amazonaws.com:1521:EMPDB</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">Java2021</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
-        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
 
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@trkdb.cmtkalryuwt4.us-east-2.rds.amazonaws.com:1521:EMPDB</property>
-        <property name="hibernate.connection.username">admin</property>
-        <property name="hibernate.connection.password">Java2021</property>
+        <!--This allows us to run code but does not create already made tables-->
+        <!-- DB schema will be updated if needed -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
-        <property name="hibernate.connection.pool.size">1</property>
+        <!-- Allows to see sql query in console window -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
 
-        <!--This can be removed when backend is complete-->
-        <property name="show_sql">true</property>
+        <mapping class="models.FoodTruck" />
+        <mapping class="models.User" />
 
-        <property name="hibernate.hbm2ddl.auto">validate</property>
-
- <!--   <mapping class="models.Customer"/>
-        <mapping class="models.FoodTruck"/>     -->
 
     </session-factory>
 </hibernate-configuration>
