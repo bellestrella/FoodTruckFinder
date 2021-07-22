@@ -40,10 +40,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.oracle</groupId>
+      <groupId>com.oracle.database.jdbc</groupId>
       <artifactId>ojdbc8</artifactId>
-      <version>1.0</version>
-      <systemPath>C:/Users/Leo and Layla/Desktop/ojdbc8-full/ojdbc8.jar</systemPath>
+      <version>21.1.0.0</version>
     </dependency>
 
     <dependency>
@@ -85,6 +84,11 @@
       <version>5.2.16.RELEASE</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.13</version>  <!-- or a later version... -->
+    </dependency>
 
   </dependencies>
 
