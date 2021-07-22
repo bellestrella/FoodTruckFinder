@@ -1,5 +1,8 @@
 package models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Customer extends User{
     String favoriteFoodTruck;
     Object CreditCard;
@@ -9,6 +12,8 @@ public class Customer extends User{
         this.favoriteFoodTruck = favoriteFoodTruck;
         CreditCard = creditCard;
     }
+
+    public Customer(){}
 
     public String getFavoriteFoodTruck() {
         return favoriteFoodTruck;
