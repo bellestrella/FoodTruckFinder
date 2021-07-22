@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FoodTruckFinder:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>FoodTruckFinder</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="FoodTruckFinder.war">
+      <element id="artifact" artifact-name="FoodTruckFinder:war exploded" />
+    </root>
+  </artifact>
+</component>
