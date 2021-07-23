@@ -1,4 +1,4 @@
-// Test clas which will test inserting Food Trucks and Users
+// Test class which will test inserting Food Trucks and Users
 
 package models;
 
