@@ -4,4 +4,9 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>Spring servlet</servlet-name>
+    <servlet-class></servlet-class>
+  </servlet>
 </web-app>
