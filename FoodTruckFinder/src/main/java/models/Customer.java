@@ -1,6 +1,8 @@
 package models;
 
-public class Customer extends User{
+import hibernate.crud.operations.User;
+
+public class Customer extends User {
     String favoriteFoodTruck;
     Object CreditCard;
 

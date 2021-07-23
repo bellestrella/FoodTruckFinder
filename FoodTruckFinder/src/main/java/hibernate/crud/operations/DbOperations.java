@@ -1,6 +1,5 @@
 package hibernate.crud.operations;
 
-import models.User;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -69,7 +68,7 @@ public class DbOperations {
     }
 
     // Method 2: This Method Is Used To Display The Records From The Database Table
-    @SuppressWarnings("unchecked")
+   @SuppressWarnings("unchecked")
     public static List displayRecords() {
         List usersList = new ArrayList();
 

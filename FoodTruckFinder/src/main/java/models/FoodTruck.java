@@ -1,5 +1,7 @@
 package models;
 
+import hibernate.crud.operations.User;
+
 import javax.persistence.*;
 
 // Specifies that the class is an entity. @Table name defines specific table name

@@ -1,30 +1,36 @@
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.FoodTruck;
+import services.Security;
 import javax.persistence.*;
 
 // Specifies that the class is an entity. @Table name defines specific table name
 @Entity
 @Table(name = "USERS")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     // table attributes that will translate to table columns
     // Annotate our PK and generate the ID number with our created DB sequence
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
     private String password;
-    private String type;
+
 
     // relationship is bidirectional, the mappedBy element must be used to specify the relationship field or property of
     // the entity that is the owner of the relationship.
-    @OneToMany(mappedBy = "user",cascade=CascadeType.PERSIST)
-    private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();
+    /*@OneToMany(mappedBy = "user",cascade=CascadeType.PERSIST)*//*
+    private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();*/
 
+<<<<<<< Updated upstream:FoodTruckFinder/src/main/java/hibernate/crud/operations/User.java
     // build our parameterized constructor
     public User() {
         super();
@@ -35,6 +41,9 @@ public class User {
         this.password = password;
         this.type = type;
     }
+=======
+
+>>>>>>> Stashed changes:FoodTruckFinder/src/main/java/models/User.java
     // getters/setters
     public int getId() {
         return id;
@@ -68,20 +77,16 @@ public class User {
         this.password = password;
     }
 
-    public String getType() {
-        return type;
-    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<FoodTruck> getFoodtruck() {
+   /* public List<FoodTruck> getFoodtruck() {
         return foodtruck;
     }
 
     public void setFoodtruck(List<FoodTruck> foodtruck) {
         this.foodtruck = foodtruck;
+    }*/
+    @Override
+    public String toString(){
+        return "User Details?= Id: " + this.id + ", Name: " + this.name + ", Email: " + this.email + ", Password: " + this.password;
     }
-
 }
