@@ -45,7 +45,6 @@ public class Main {
             System.out.println("\n\nDisplay Food Truck List:\n " + next);
         }
 
-
     }
 
 }
