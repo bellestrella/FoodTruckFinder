@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import services.Security;
 
 import javax.persistence.*;
 
@@ -26,15 +27,15 @@ public class User {
     private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();
 
     // build our parameterized constructor
-    public User() {
-        super();
-    }
     public User (String name, String email, String password, String type) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.password = Security.makeSecure(password);
         this.type = type;
     }
+
+    public User(){}
+
     // getters/setters
     public int getId() {
         return id;
@@ -43,8 +44,6 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-
-    public User(){}
 
     public String getName() {
         return name;
@@ -67,7 +66,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = Security.makeSecure(password);
     }
 
     public String getType() {
