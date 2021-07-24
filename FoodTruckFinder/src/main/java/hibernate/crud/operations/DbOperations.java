@@ -1,6 +1,6 @@
 package hibernate.crud.operations;
 
-import org.apache.log4j.Logger;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -68,7 +68,7 @@ public class DbOperations {
     }
 
     // Method 2: This Method Is Used To Display The Records From The Database Table
-   @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static List displayRecords() {
         List usersList = new ArrayList();
 
@@ -125,79 +125,79 @@ public class DbOperations {
         }
     }
 
-        // Method 4: This Method Is Used To Delete A Particular Record From The Database Table
-        public static void deleteRecord(Integer id){
-            try {
-                // Getting Session Object From SessionFactory
-                sessionObj = buildSessionFactory().openSession();
-                // Getting Transaction Object From Session Object
-                sessionObj.beginTransaction();
+    // Method 4: This Method Is Used To Delete A Particular Record From The Database Table
+    public static void deleteRecord(Integer id){
+        try {
+            // Getting Session Object From SessionFactory
+            sessionObj = buildSessionFactory().openSession();
+            // Getting Transaction Object From Session Object
+            sessionObj.beginTransaction();
 
-                User useObj = findRecordById(id);
-                sessionObj.delete(useObj);
+            User useObj = findRecordById(id);
+            sessionObj.delete(useObj);
 
-                // Committing The Transactions To The Database
-                sessionObj.getTransaction().commit();
-                logger.info("\nUser With Id?= " + id + " Is Successfully Deleted From The Database!\n");
-            } catch (Exception sqlException) {
-                if (null != sessionObj.getTransaction()) {
-                    logger.info("\n.......Transaction Is Being Rolled Back.......\n");
-                    sessionObj.getTransaction().rollback();
-                }
-                sqlException.printStackTrace();
-            } finally {
-                if (sessionObj != null) {
-                    sessionObj.close();
-                }
+            // Committing The Transactions To The Database
+            sessionObj.getTransaction().commit();
+            logger.info("\nUser With Id?= " + id + " Is Successfully Deleted From The Database!\n");
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
+                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                sessionObj.getTransaction().rollback();
             }
-        }
-        // Method 5: This Method To Find Particular Record In The Database Table
-        public static User findRecordById (Integer find_id){
-            User findUserObj = null;
-            try {
-                // Getting Session Object From SessionFactory
-                sessionObj = buildSessionFactory().openSession();
-                // Getting Transaction Object From Session Object
-                sessionObj.beginTransaction();
-
-                findUserObj = (User) sessionObj.load(User.class, find_id);
-
-            } catch (Exception sqlException) {
-                if (null != sessionObj.getTransaction()) {
-                    logger.info("\n.......Transaction Is Being Rolled Back.......\n");
-                    sessionObj.getTransaction().rollback();
-                }
-                sqlException.printStackTrace();
-            }
-            return findUserObj;
-
-        }
-        // Method 6: This Method Is Used To Delete All Records From The Database Table
-        public static void deleteAllRecords () {
-            try {
-                // Getting Session Object From SessionFactory
-                sessionObj = buildSessionFactory().openSession();
-                // Getting Transaction Object From Session Object
-                sessionObj.beginTransaction();
-
-                Query queryObj = sessionObj.createQuery("DELETE FROM User");
-                queryObj.executeUpdate();
-
-                // Committing The Transactions To The Database
-                sessionObj.getTransaction().commit();
-                logger.info("\nSuccessfully Deleted All Records From The Database Table!\n");
-            } catch (Exception sqlException) {
-                if (null != sessionObj.getTransaction()) {
-                    logger.info("\n.......Transaction Is Being Rolled Back.......\n");
-                    sessionObj.getTransaction().rollback();
-                }
-                sqlException.printStackTrace();
-            } finally {
-                if (sessionObj != null) {
-                    sessionObj.close();
-                }
+            sqlException.printStackTrace();
+        } finally {
+            if (sessionObj != null) {
+                sessionObj.close();
             }
         }
     }
+    // Method 5: This Method To Find Particular Record In The Database Table
+    public static User findRecordById (Integer find_id){
+        User findUserObj = null;
+        try {
+            // Getting Session Object From SessionFactory
+            sessionObj = buildSessionFactory().openSession();
+            // Getting Transaction Object From Session Object
+            sessionObj.beginTransaction();
+
+            findUserObj = (User) sessionObj.load(User.class, find_id);
+
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
+                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                sessionObj.getTransaction().rollback();
+            }
+            sqlException.printStackTrace();
+        }
+        return findUserObj;
+
+    }
+    // Method 6: This Method Is Used To Delete All Records From The Database Table
+    public static void deleteAllRecords () {
+        try {
+            // Getting Session Object From SessionFactory
+            sessionObj = buildSessionFactory().openSession();
+            // Getting Transaction Object From Session Object
+            sessionObj.beginTransaction();
+
+            Query queryObj = sessionObj.createQuery("DELETE FROM User");
+            queryObj.executeUpdate();
+
+            // Committing The Transactions To The Database
+            sessionObj.getTransaction().commit();
+            logger.info("\nSuccessfully Deleted All Records From The Database Table!\n");
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
+                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                sessionObj.getTransaction().rollback();
+            }
+            sqlException.printStackTrace();
+        } finally {
+            if (sessionObj != null) {
+                sessionObj.close();
+            }
+        }
+    }
+}
 
 

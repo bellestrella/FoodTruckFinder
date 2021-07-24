@@ -1,13 +1,8 @@
-package models;
+package hibernate.crud.operations;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.security.Security;
-import java.util.ArrayList;
-import java.util.List;
-
-import models.FoodTruck;
-import services.Security;
-import javax.persistence.*;
 
 // Specifies that the class is an entity. @Table name defines specific table name
 @Entity
@@ -62,7 +57,7 @@ public class User implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = Security.makeSecure(password);
+        this.password = password;
     }
 
 
