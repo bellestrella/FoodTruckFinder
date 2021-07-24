@@ -1,16 +1,21 @@
 package models;
 
+/*
+import hibernate.crud.operations.User;
+<<<<<<< Updated upstream
+
 import javax.persistence.*;
+=======
+>>>>>>> Stashed changes
+*/
 
 // Specifies that the class is an entity. @Table name defines specific table name
-@Entity
-@Table
+
 public class FoodTruck {
 
     // table attributes that will translate to table columns
     // Annotate our PK and generate the ID number with our created DB sequence
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private int id;
     private String truckName;
     private String truckAddress;
@@ -21,7 +26,6 @@ public class FoodTruck {
 
     // Specifies a single-valued association to another entity class that has many-to-one multiplicity.
     // It is not normally necessary to specify the target entity explicitly since it can usually be inferred from the type of the object being referenced
-    @ManyToOne
     private User user;
 
     // include no args
@@ -116,11 +120,10 @@ public class FoodTruck {
     }
 
     // Displays food truck db data to the console to check our inputs
-    @Override
-    public String toString() {
+/*    public String toString() {
         return "[ id = " + id + ", name = " + truckName + ", truck address = " + truckAddress
                 + ", truck phone # = " + truckPhoneNumber + ", buisness hours = " + businessHours
                 + ", food type = " + foodType + ", menu = " + menu
                 +  " ]";
-    }
+    }*/
 }
