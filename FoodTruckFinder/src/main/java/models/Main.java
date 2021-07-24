@@ -12,8 +12,7 @@ import org.hibernate.*;
 import org.hibernate.query.Query;
 
 // Test class
-public class Main {
-    // Test Initiation
+public class Main {/* // Test Initiation
     public static void main(String[] args){
 
         // uses our hibernate util to connect with the database
@@ -36,8 +35,8 @@ public class Main {
         for (FoodTruck next : resultList) {
             System.out.println("\n\nDisplay Food Truck List:\n " + next);
         }
+*/
 
 
     }
 
-}

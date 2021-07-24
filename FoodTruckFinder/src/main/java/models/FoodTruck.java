@@ -3,8 +3,7 @@ package models;
 import javax.persistence.*;
 
 // Specifies that the class is an entity. @Table name defines specific table name
-@Entity
-@Table
+
 public class FoodTruck {
 
     // table attributes that will translate to table columns
@@ -20,13 +19,13 @@ public class FoodTruck {
 
     // Specifies a single-valued association to another entity class that has many-to-one multiplicity.
     // It is not normally necessary to specify the target entity explicitly since it can usually be inferred from the type of the object being referenced
-    private User user;
+
 
     // include no args
     public FoodTruck(){}
 
     // many to one relationship created
-    public FoodTruck(String truckName, String truckAddress, String truckPhoneNumber, String businessHours, String foodType, String menu, User user)
+    public FoodTruck(String truckName, String truckAddress, String truckPhoneNumber, String businessHours, String foodType, String menu)
     {
         this.truckName= truckName;
         this.truckAddress = truckAddress;
@@ -35,9 +34,10 @@ public class FoodTruck {
         this.businessHours = businessHours;
         this.foodType = foodType;
         this.menu = menu;
-        this.user = user;
+
     }
     // food truck constructor with desired parameters variables
+/*
     public FoodTruck(String truckName, String truckAddress, String truckPhoneNumber,
                      String businessHours, String foodType, String menu)
     {
@@ -49,6 +49,7 @@ public class FoodTruck {
         this.foodType = foodType;
         this.menu = menu;
     }
+*/
 
     // getters / setters
     public String getTruckName() {
@@ -106,12 +107,14 @@ public class FoodTruck {
         this.id = id;
     }
 
+/*
     public User getUser(){
         return user;
     }
     public void setUser(User user){
         this.user = user;
     }
+*/
 
     // Displays food truck db data to the console to check our inputs
 /*    public String toString() {

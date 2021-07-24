@@ -1,12 +1,12 @@
 package hibernate.crud.operations;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import org.apache.log4j.Logger;
 import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;

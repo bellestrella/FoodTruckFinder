@@ -1,4 +1,4 @@
-package models;
+package hibernate.crud.operations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +73,6 @@ public class User implements Serializable {
     }*/
     @Override
     public String toString(){
-        return "User Details?= Id: " + this.id + ", Name: " + this.name + ", Email: " + this.email + ", Password: " + this.password;
+        return "User Details = Id: " + this.id + ", Name: " + this.name + ", Email: " + this.email + ", Password: " + this.password;
     }
 }
