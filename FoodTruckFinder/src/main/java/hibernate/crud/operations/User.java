@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.security.Security;
 
 // Specifies that the class is an entity. @Table name defines specific table name
 @Entity
 @Table(name = "USERS")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     // table attributes that will translate to table columns
     // Annotate our PK and generate the ID number with our created DB sequence
@@ -22,19 +26,10 @@ public class User {
 
     // relationship is bidirectional, the mappedBy element must be used to specify the relationship field or property of
     // the entity that is the owner of the relationship.
+    /*@OneToMany(mappedBy = "user",cascade=CascadeType.PERSIST)*//*
+    private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();*/
 
-    //private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();
 
-    // build our parameterized constructor
-/*    public User() {
-        super();
-    }
-    public User (String name, String email, String password, String type) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.type = type;
-    }*/
     // getters/setters
     public int getId() {
         return id;
@@ -68,26 +63,16 @@ public class User {
         this.password = password;
     }
 
-    public String toString() {
-        return "[ id = " + id + ", name = " + name + ", email = " + email
-                + ", password = " + password
-                + " ]";
 
-   /* public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<FoodTruck> getFoodtruck() {
+   /* public List<FoodTruck> getFoodtruck() {
         return foodtruck;
     }
 
     public void setFoodtruck(List<FoodTruck> foodtruck) {
         this.foodtruck = foodtruck;
     }*/
-
+    @Override
+    public String toString(){
+        return "User Details?= Id: " + this.id + ", Name: " + this.name + ", Email: " + this.email + ", Password: " + this.password;
     }
 }

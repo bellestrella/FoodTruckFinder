@@ -1,6 +1,8 @@
 package models;
 
-public class Customer extends User{
+
+
+public class Customer{
     String favoriteFoodTruck;
     Object CreditCard;
 

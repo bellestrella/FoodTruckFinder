@@ -10,7 +10,6 @@
         <property name="connection.username">admin</property>
         <property name="connection.password">Java2021</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
-
         <!--This allows us to run code but does not create already made tables-->
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
@@ -18,7 +17,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="models.User" />
+        <mapping class="hibernate.crud.operations.User" />
 
 
     </session-factory>

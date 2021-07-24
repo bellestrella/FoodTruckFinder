@@ -1,16 +1,15 @@
 package hibernate.crud.operations;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import models.User;
+
+import javax.persistence.Query;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DbOperations {
 
@@ -25,7 +24,7 @@ public class DbOperations {
         Configuration configObj = new Configuration().addAnnotatedClass(User.class);
         configObj.configure("hibernate.cfg.xml");
 
-        // Since Hibernate Version 4.x, ServiceRegistry Is Being Used
+        // SServiceRegistry Is Being Used ... Need to update on version depending
         ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
 
         // Creating Hibernate SessionFactory Instance
@@ -44,27 +43,25 @@ public class DbOperations {
             sessionObj.beginTransaction();
 
             // Creating Transaction Entities
-
-
-                userObj = new User();
-                userObj.setName("Eddie Mu");
-                userObj.setEmail("myEmail@email.com" );
-                userObj.setPassword("passeword");
-                sessionObj.save(userObj);
+            userObj = new User();
+            userObj.setName("Eddie");
+            userObj.setEmail("email@email.com");
+            userObj.setPassword("pass");
+            sessionObj.save(userObj);
 
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
             logger.info("\nSuccessfully Created Records In The Database!\n");
 
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         } finally {
-            if(sessionObj != null) {
+            if (sessionObj != null) {
                 sessionObj.close();
             }
         }
@@ -74,6 +71,7 @@ public class DbOperations {
     @SuppressWarnings("unchecked")
     public static List displayRecords() {
         List usersList = new ArrayList();
+
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
@@ -81,21 +79,22 @@ public class DbOperations {
             sessionObj.beginTransaction();
 
             usersList = sessionObj.createQuery("FROM User").list();
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         } finally {
-            if(sessionObj != null) {
+            if (sessionObj != null) {
                 sessionObj.close();
             }
         }
         return usersList;
     }
 
-    // Method 3: This Method Is Used To Update A Record In The Database Table   
+    // Method 3: This Method Is Used To Update A Record In The Database Table
     public static void updateRecord(int id) {
         try {
             // Getting Session Object From SessionFactory
@@ -105,97 +104,100 @@ public class DbOperations {
 
             // Creating Transaction Entity
             User uObj = (User) sessionObj.get(User.class, id);
-            uObj.setName("New Challenger");
-            uObj.setEmail("email@email.com");
-            uObj.setPassword("pass");
+            uObj.setName("New Name");
+            uObj.setEmail("New email");
+            uObj.setPassword("New pass");
+
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
             logger.info("\nUser With Id?= " + id + " Is Successfully Updated In The Database!\n");
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         } finally {
-            if(sessionObj != null) {
+            if (sessionObj != null) {
                 sessionObj.close();
             }
         }
     }
-/*
-    // Method 4(a): This Method Is Used To Delete A Particular Record From The Database Table
-    public static void deleteRecord(Integer student_id) {
+
+    // Method 4: This Method Is Used To Delete A Particular Record From The Database Table
+    public static void deleteRecord(Integer id){
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            Student studObj = findRecordById(student_id);
-            sessionObj.delete(studObj);
+            User useObj = findRecordById(id);
+            sessionObj.delete(useObj);
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
-            logger.info("\nStudent With Id?= " + student_id + " Is Successfully Deleted From The Database!\n");
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+            logger.info("\nUser With Id?= " + id + " Is Successfully Deleted From The Database!\n");
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         } finally {
-            if(sessionObj != null) {
+            if (sessionObj != null) {
                 sessionObj.close();
             }
         }
     }
-
-    // Method 4(b): This Method To Find Particular Record In The Database Table
-    public static Student findRecordById(Integer find_student_id) {
-        Student findStudentObj = null;
+    // Method 5: This Method To Find Particular Record In The Database Table
+    public static User findRecordById (Integer find_id){
+        User findUserObj = null;
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            findStudentObj = (Student) sessionObj.load(Student.class, find_student_id);
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+            findUserObj = (User) sessionObj.load(User.class, find_id);
+
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         }
-        return findStudentObj;
-    }
+        return findUserObj;
 
-    // Method 5: This Method Is Used To Delete All Records From The Database Table
-    public static void deleteAllRecords() {
+    }
+    // Method 6: This Method Is Used To Delete All Records From The Database Table
+    public static void deleteAllRecords () {
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            Query queryObj = sessionObj.createQuery("DELETE FROM Student");
+            Query queryObj = sessionObj.createQuery("DELETE FROM User");
             queryObj.executeUpdate();
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
             logger.info("\nSuccessfully Deleted All Records From The Database Table!\n");
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+        } catch (Exception sqlException) {
+            if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
                 sessionObj.getTransaction().rollback();
             }
             sqlException.printStackTrace();
         } finally {
-            if(sessionObj != null) {
+            if (sessionObj != null) {
                 sessionObj.close();
             }
-        }*/
-   // }
+        }
+    }
 }
+
+

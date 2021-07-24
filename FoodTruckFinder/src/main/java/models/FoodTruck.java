@@ -1,16 +1,10 @@
 package models;
 
-/*
-import hibernate.crud.operations.User;
-<<<<<<< Updated upstream
-
 import javax.persistence.*;
-=======
->>>>>>> Stashed changes
-*/
 
 // Specifies that the class is an entity. @Table name defines specific table name
-
+@Entity
+@Table
 public class FoodTruck {
 
     // table attributes that will translate to table columns
