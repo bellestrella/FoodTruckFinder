@@ -58,18 +58,18 @@ public class HibernateUtil2 {
 
     }
     //Will not work in current form. session.get() expects PK
-    private User getByEmail(String email){
+  /*    private User getByEmail(String email){
         Session session = this.SF.openSession();
         Transaction tx = session.beginTransaction();
 
-        User user = (User) session.get(User.class, "user")
+      User user = (User) session.get(User.class, "user")
                 .add(Restrictions.eq("user.email", email)).uniqueResult();
 
         tx.commit();
         session.close();
 
         return user;
-    }
+    }*/
 
     private void saveFoodTruck(FoodTruck foodTruck){
         Session session = this.SF.openSession();
