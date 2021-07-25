@@ -15,4 +15,14 @@
     <servlet-name>Spring-dispatcher</servlet-name>
     <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FoodServlet</servlet-name>
+    <servlet-class>controller.FoodtruckServletJSON</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FoodServlet</servlet-name>
+    <url-pattern>/foodtrucks</url-pattern>
+  </servlet-mapping>
+
 </web-app>
