@@ -18,4 +18,11 @@ export class FoodTruckApplComponent implements OnInit {
     this.router.navigate(['dashboard']);
     // the navigate() seams to want a then() after it. not sure why.
   }
+
+  apply() {
+    console.log('Well this is where applying would work');
+    this.router.navigate(['dashboard']);
+    // the navigate() seams to want a then() after it. not sure why.
+  }
+
 }

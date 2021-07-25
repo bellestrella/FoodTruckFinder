@@ -1,6 +1,34 @@
-<p>food-truck-appl works!</p>
+<div style= "background-color: #5D5C61">
 
-<form (submit)="back()">
+  <p>food-truck-appl works!</p>
 
-  <input type="submit" value="Back to the food truck app!">
-</form>
+  <form (submit)="apply()">
+
+    <label for="name">Truck Name:</label>
+    <input id="name" type="text" placeholder="Food Truck Name">
+
+    <label for="type">Primary Food Type:</label>
+    <input id="type" type="text" placeholder="Mexican">
+
+    <label for="location">Permanent Address :</label>
+    <input id="location" type="text" placeholder="Address">
+
+    <div v-for="(row, index) in rows" :key="index">
+      <label for="menu"></label>
+      <input type="text" id="menu" v-model="row.section">
+
+    </div>
+    <button >
+      Add to menu
+    </button>
+
+    <input type="submit" value="Apply">
+  </form>
+
+
+  <form (submit)="back()">
+
+    <input type="submit" value="Back to the food truck app!">
+  </form>
+
+</div>

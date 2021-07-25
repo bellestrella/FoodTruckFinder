@@ -5,3 +5,18 @@
   margin-bottom: auto;
   text-align: center;
 }
+
+.flex-grid{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid .col{
+  width: 50%;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
