@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
         // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Rosy = new google.maps.InfoWindow({
-        content: "<h1>This is Rositas</h1>"
+        content: "<h1>This is Rositas</h1><h2>Mexican Food</h2>"
       });
       Rositas.set("id", 1);
 
