@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Component;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -15,6 +16,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+@Component
 public class HibernateUtil2 {
 
     Configuration config = new Configuration().configure();
@@ -103,7 +105,7 @@ public class HibernateUtil2 {
 
     }
 
-    private List<FoodTruck> getAllFoodTrucks(){
+    public List<FoodTruck> getAllFoodTrucks(){
         Session session = this.SF.openSession();
         Transaction tx = session.beginTransaction();
 
