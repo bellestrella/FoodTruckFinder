@@ -23,7 +23,7 @@ public class DbOperations {
     // This Method Is Used To Create The Hibernate's SessionFactory Object
     private static SessionFactory buildSessionFactory() {
         // Creating Configuration Instance & Passing Hibernate Configuration File
-        Configuration configObj = new Configuration().addAnnotatedClass(.class);
+        Configuration configObj = new Configuration().addAnnotatedClass(DbOperations.class);
         configObj.configure("hibernate.cfg.xml");
 
         // SServiceRegistry Is Being Used ... Need to update on version depending
@@ -105,11 +105,11 @@ public class DbOperations {
             sessionObj.beginTransaction();
 
             // Creating Transaction Entity
-             uObj = () sessionObj.get(.class, id);
+          /*   uObj = () sessionObj.get(.class, id);
             uObj.setName("New Name");
             uObj.setEmail("New email");
             uObj.setPassword("New pass");
-
+*/
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
@@ -135,9 +135,9 @@ public class DbOperations {
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-             useObj = findRecordById(id);
+       /*      useObj = findRecordById(id);
             sessionObj.delete(useObj);
-
+*/
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
             logger.info("\n With Id?= " + id + " Is Successfully Deleted From The Database!\n");
@@ -154,8 +154,8 @@ public class DbOperations {
         }
     }
     // Method 5: This Method To Find Particular Record In The Database Table
-    public static  findRecordById (Integer find_id){
-         findUserObj = null;
+    public static findRecordById (Integer find_id){
+     /*    findUserObj = null;
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
@@ -172,7 +172,7 @@ public class DbOperations {
             sqlException.printStackTrace();
         }
         return findUserObj;
-
+*/
     }
     // Method 6: This Method Is Used To Delete All Records From The Database Table
     public static void deleteAllRecords () {
