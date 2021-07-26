@@ -12,8 +12,7 @@ import org.hibernate.*;
 import org.hibernate.query.Query;
 
 // Test class
-public class Main {
-    // Test Initiation
+public class Main {/* // Test Initiation
     public static void main(String[] args){
 
         // uses our hibernate util to connect with the database
@@ -21,14 +20,9 @@ public class Main {
         // starts our transaction which allows CRUDE operations
         session.beginTransaction();
 
-        // build instance obj
-        User user = new User ("Miguel", "email", "password", "OWNER");
-        session.save(user);
 
-        // build object with food truck details and saves obj
-        session.save(new FoodTruck("Valentinas", "11500 Menchaca Road Austin, Texas 78748", "(512) 221-4248", "wed-sun", "BBQ", "menu"));
-        // get the Transaction instance associated with this session and commits to db
-        session.getTransaction().commit();
+
+
 
         // build a query in session with HQL string to fetch table data
         Query q = session.createQuery("FROM FoodTruck");
@@ -41,8 +35,8 @@ public class Main {
         for (FoodTruck next : resultList) {
             System.out.println("\n\nDisplay Food Truck List:\n " + next);
         }
+*/
 
 
     }
 
-}
