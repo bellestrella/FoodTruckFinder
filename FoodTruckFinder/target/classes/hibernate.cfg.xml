@@ -20,7 +20,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="hibernate.crud.operations.User" />
+        <mapping class="spring.model.User" />
 
 
     </session-factory>

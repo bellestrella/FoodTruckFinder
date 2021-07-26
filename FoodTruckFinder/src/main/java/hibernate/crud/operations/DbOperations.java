@@ -7,6 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import org.apache.log4j.Logger;
+import spring.model.User;
+
 import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;

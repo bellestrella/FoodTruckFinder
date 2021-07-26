@@ -1,4 +1,4 @@
-package hibernate.crud.operations;
+package spring.model;
 
 import java.util.ArrayList;
 import java.util.List;
