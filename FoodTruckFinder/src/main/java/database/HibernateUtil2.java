@@ -16,8 +16,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-@Component
+@Component("HibernateUtil2")
 public class HibernateUtil2 {
+
+    public HibernateUtil2(){}
 
     Configuration config = new Configuration().configure();
 

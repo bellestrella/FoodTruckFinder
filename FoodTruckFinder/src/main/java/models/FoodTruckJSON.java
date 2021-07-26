@@ -1,6 +1,9 @@
 // Foodtruck Java Bean class
 package models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FoodTruckJSON {
 
         int truckID;
@@ -22,6 +25,7 @@ public class FoodTruckJSON {
             this.foodType = foodType;
 
         }
+        public FoodTruckJSON(){}
 
         public int getTruckID() {
             return truckID;

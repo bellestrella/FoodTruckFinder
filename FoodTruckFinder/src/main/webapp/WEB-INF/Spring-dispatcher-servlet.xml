@@ -8,4 +8,8 @@
 
     <context:component-scan base-package="controllers"></context:component-scan>
 
+    <bean id="HibernateUtil2" class="database.HibernateUtil2"/>
+    <bean id="FoodTruckJSON" class="models.FoodTruckJSON"/>
+    <bean id="FoodtruckServiceJSON" class="service.FoodtruckServiceJSON"/>
+
 </beans>
