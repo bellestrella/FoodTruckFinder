@@ -1,9 +1,9 @@
-<p>A place for Food Trucks!</p>
+<p style="margin-left: -100px">A place for Food Trucks!</p>
 <!-- Need an actual dashboard -->
 <div class="full" id="map" style="text-align: center">
 
 </div>
-<div [ngSwitch]="key">
+<div [ngSwitch]="key" style="margin-left: -100px">
 
 
   <div class="full grid" id="menu1" *ngSwitchCase="'Rosy'">
@@ -182,7 +182,7 @@
 </div>
 <br><br><br>
 
-<form (submit)="appl()">
+<form (submit)="appl()" style="margin-left: -100px">
 
   <input type="submit" value="Have a Food Truck? Register here!">
 </form>

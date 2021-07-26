@@ -1,31 +1,86 @@
-<div style= "background-color: #5D5C61">
+<div style="margin-left: -100px">
 
-  <p>food-truck-appl works!</p>
+  <h3>General food truck information</h3>
 
-  <form (submit)="apply()">
-
+  <form (submit)="apply()" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div style="display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-gap: 20px;
+  margin-left: -40px;
+  margin: auto;">
     <label for="name">Truck Name:</label>
     <input id="name" type="text" placeholder="Food Truck Name">
-
-    <label for="type">Primary Food Type:</label>
+    <br>
+    <label style="margin-left: 10px" for="type">Primary Food Type:</label>
     <input id="type" type="text" placeholder="Mexican">
-
-    <label for="location">Permanent Address :</label>
-    <input id="location" type="text" placeholder="Address">
-
-    <div v-for="(row, index) in rows" :key="index">
-      <label for="menu"></label>
-      <input type="text" id="menu" v-model="row.section">
+    <br>
+    <label style="margin-left: 10px" for="Address">Permanent Address:</label>
+    <input id="Address" type="text" placeholder="Address">
 
     </div>
-    <button >
-      Add to menu
-    </button>
+    <h3>Hours of operation</h3>
+  <br>
+    <div style="display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-left: -40px;
+  margin: auto;">
+    <label >Monday:  </label>
+    <input id="mondaystart" type="text" placeholder="Start">
+    <input id="mondayend" type="text" placeholder="End"><br>
+    <label >Tuesday: </label>
+    <input id="tuesdaystart" type="text" placeholder="Start">
+    <input id="tuesdayend" type="text" placeholder="End"><br>
+    <label >Wednesday:</label>
+    <input id="wednesdaystart" type="text" placeholder="Start">
+    <input id="wednesdayend" type="text" placeholder="End"><br>
+    <label >Thursday :</label>
+    <input id="thursdaystart" type="text" placeholder="Start">
+    <input id="thursdayend" type="text" placeholder="End"><br>
+    <label >Friday  :</label>
+    <input id="fridaystart" type="text" placeholder="Start">
+    <input id="fridayend" type="text" placeholder="End"><br>
+    <label >Saturday:</label>
+    <input id="saturdaystart" type="text" placeholder="Start">
+    <input id="saturdayend" type="text" placeholder="End"><br>
+    <label >Sunday    :</label>
+    <input id="sundaystart" type="text" placeholder="Start">
+    <input id="sundayend" type="text" placeholder="End"><br>
+
+    </div>
+
+
+
+
+    <br>
+      <table class="table table-bordered" formArrayName="quantities">
+        <tr>
+          <th colspan="2">Add Menu Options:</th>
+          <th width="150px"><button type="button" (click)="addQuantity()" class="btn btn-primary">Add More</button></th>
+        </tr>
+        <tr *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+          <td>
+            <label for="name">Product Name:</label>
+            <input type="text" id="names" name="name" formControlName="name" class="form-control">
+          </td>
+          <td>
+            Description :
+            <input type="text" formControlName="desc" class="form-control">
+          </td>
+          <td>
+            Price:
+            <input type="text" formControlName="price" class="form-control">
+          </td>
+          <td>
+            <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+          </td>
+        </tr>
+      </table>
 
     <input type="submit" value="Apply">
   </form>
 
-
+<br><br>
   <form (submit)="back()">
 
     <input type="submit" value="Back to the food truck app!">

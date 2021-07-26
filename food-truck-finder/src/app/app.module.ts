@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodTruckApplComponent } from './food-truck-appl/food-truck-appl.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,10 +18,12 @@ import { FoodTruckApplComponent } from './food-truck-appl/food-truck-appl.compon
     DashboardComponent,
     FoodTruckApplComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
