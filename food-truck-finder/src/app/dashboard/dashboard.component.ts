@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
         // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Rosy = new google.maps.InfoWindow({
-        content: "<h2>Rositas Food Truck</h2><br><h3>Address: 1801 E. Riverside Dr, Austin</h3><br><h3>Food Type: Mexican</h3>"
+        content: "<h5>Rositas Food Truck</h5><br><h6>Address: 1801 E. Riverside Dr, Austin</h6><br><h6>Food Type: Mexican</h6>"
       });
       Rositas.set("id", 1);
 
@@ -59,7 +59,7 @@ export class DashboardComponent implements OnInit {
         title: "Craft" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Crafter = new google.maps.InfoWindow({
-        content: "<h2>Craft Woodfire Pizza</h2><br><h3>Address: 3901 Promontory Point Dr, Austin, TX 78744</h3><br><h3>Food Type: Pizza</h3>"
+        content: "<h5>Craft Woodfire Pizza</h5><br><h6>Address: 3901 Promontory Point Dr, Austin, TX 78744</h6><br><h6>Food Type: Pizza</h6>"
       });
       Craft.addListener("click", () => {
         prevMarker.close();
@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
         title: "Valentinas" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Valen = new google.maps.InfoWindow({
-        content: "<h2>Valentina’s Tex Mex BBQ</h2><br><h3>Address: 11500 Menchaca Rd, Austin TX 78748</h3><br><h3>Food Type: Tex-Mex|BBQ</h3>"
+        content: "<h5>Valentina’s Tex Mex BBQ</h5><br><h6>Address: 11500 Menchaca Rd, Austin TX 78748</h6><br><h6>Food Type: Tex-Mex|BBQ</h6>"
       });
       Valentinas.addListener("click", () => {
         prevMarker.close();
@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
         title: "Revolution" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Revo = new google.maps.InfoWindow({
-        content: "<h2>Revolution Vegan Kitchen</h2><br><h3>Address: 7800 S 1st St, Austin, TX 78745 </h3><br><h3>Food Type: Vegan</h3>"
+        content: "<h5>Revolution Vegan Kitchen</h5><br><h6>Address: 7800 S 1st St, Austin, TX 78745 </h6><br><h6>Food Type: Vegan</h6>"
       });
       Revolution.addListener("click", () => {
         prevMarker.close();
