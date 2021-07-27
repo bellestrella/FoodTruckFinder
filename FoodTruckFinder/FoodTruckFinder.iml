@@ -31,7 +31,13 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Controllers Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/controllers-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/Spring-dispatcher-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
