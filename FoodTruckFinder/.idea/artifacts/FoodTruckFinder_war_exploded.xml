@@ -34,6 +34,7 @@
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.4.10.Final" />
           <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.1" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.5" />
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.14.1" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.14.1" />

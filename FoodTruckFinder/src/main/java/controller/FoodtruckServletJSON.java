@@ -18,6 +18,7 @@ public class FoodtruckServletJSON extends HttpServlet {
     private FoodtruckServiceJSON service = new FoodtruckServiceJSON();
 
     @Override
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     // Return Java Object to JSON from the Java servlet
         List<FoodTruckJSON> foodTrucks = new ArrayList<>();
