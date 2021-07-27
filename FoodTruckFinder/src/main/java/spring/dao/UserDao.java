@@ -8,4 +8,5 @@ public interface UserDao {
 
     public void save(User u);
     public List<User> list();
+    public boolean validate(String username, String password);
 }

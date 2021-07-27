@@ -1,4 +1,38 @@
 .full{
   width: 400px;
   height: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.flex-grid{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid .col{
+  width: 50%;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-left: -40px;
+  margin: auto;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 10px;
+}
+
+tr{
+  border: solid;
+  border-width: 1px 0;
+}
+
+td{
+  padding: 10px;
 }

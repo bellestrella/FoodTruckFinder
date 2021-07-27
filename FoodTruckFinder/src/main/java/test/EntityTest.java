@@ -3,6 +3,7 @@
     NEEDED: create hibernate util, .xml mapping, create try catch block, print to console message when
     data transfer when success/fail, print table to console (done in UsersTest class?)
  */
+/*
 
 package test;
 
@@ -48,6 +49,7 @@ public class EntityTest {
         sessionFactory.close();
 
 
+*/
 
 
 
@@ -76,8 +78,10 @@ public class EntityTest {
 //            entityManager.close();
 //            entityManagerFactory.close();
 //        }
+/*
 
 
     }
 
 }
+*/

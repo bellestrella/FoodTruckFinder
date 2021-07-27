@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="spring.model"/>
+
+    <bean id="dataSource" class = "oracle.jdbc.pool.OracleDataSource">
+        <property name="URL" value = "jdbc:oracle:thin:@trkdb.cmtkalryuwt4.us-east-2.rds.amazonaws.com:1521:EMPDB" />
+        <property name="user" value = "admin"/>
+        <property name="password" value = "Java2021"/>
+    </bean>
+
+    <bean id="hibernate5AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>spring.model.User</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id = "userDAO" class="spring.dao.UserDaoImpl">
+        <property name="sessionFactory" ref = "hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+</beans>

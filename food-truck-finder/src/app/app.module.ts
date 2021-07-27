@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FoodTruckApplComponent } from './food-truck-appl/food-truck-appl.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     LoginComponent,
     UserComponent,
-    DashboardComponent
+    DashboardComponent,
+    FoodTruckApplComponent
   ],
   imports: [
     BrowserModule,

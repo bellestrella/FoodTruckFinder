@@ -1,15 +1,14 @@
-
 package hibernate.crud.operations;
 
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 
     public class AppMain {
 
-        public final static Logger logger = Logger.getLogger(AppMain.class);
+        public final static Logger logger = LogManager.getLogger(AppMain.class);
 
         public static void main(String[] args) {
 
