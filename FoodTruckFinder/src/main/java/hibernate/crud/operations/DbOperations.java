@@ -97,7 +97,7 @@ public class DbOperations {
     }
 
     // Method 3: This Method Is Used To Update A Record In The Database Table
-    public static void updateRecord(int id) {
+    public static User updateRecord(String email) {
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
@@ -105,15 +105,9 @@ public class DbOperations {
             sessionObj.beginTransaction();
 
             // Creating Transaction Entity
-            User uObj = (User) sessionObj.get(User.class, id);
-            uObj.setName("New Name");
-            uObj.setEmail("New email");
-            uObj.setPassword("New pass");
+            User uObj = (User) sessionObj.get(User.class, email);
+            return uObj;
 
-
-            // Committing The Transactions To The Database
-            sessionObj.getTransaction().commit();
-            logger.info("\nUser With Id?= " + id + " Is Successfully Updated In The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -125,6 +119,7 @@ public class DbOperations {
                 sessionObj.close();
             }
         }
+        return null;
     }
 
     // Method 4: This Method Is Used To Delete A Particular Record From The Database Table

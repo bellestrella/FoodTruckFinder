@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -6,10 +7,10 @@
 
     <context:annotation-config/>
 
-    <context:component-scan base-package="controllers"></context:component-scan>
+    <context:component-scan base-package="controllers"/>
 
-    <bean id="HibernateUtil2" class="database.HibernateUtil2"/>
-    <bean id="FoodTruckJSON" class="models.FoodTruckJSON"/>
-    <bean id="FoodtruckServiceJSON" class="service.FoodtruckServiceJSON"/>
+    <bean id="hibernateUtil2" class="database.HibernateUtil2"/>
+    <bean id="foodTruckJSON" class="models.FoodTruckJSON"/>
+    <bean id="foodtruckServiceJSON" class="service.FoodtruckServiceJSON"/>
 
 </beans>

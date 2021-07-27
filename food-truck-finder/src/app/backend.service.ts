@@ -15,7 +15,6 @@ private login = "";
     const body = JSON.stringify(username+" " + password);
     console.log(body);
      return this.httpClient.post<any>("http://localhost:8080/FoodTruckFinder_war/Login", body,{'headers':headers})
-
     //return this.login;
   }
 }

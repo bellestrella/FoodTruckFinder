@@ -30,7 +30,7 @@
         </property>
     </bean>
 
-    <bean id = "userDAO" class="spring.dao.UserDaoImpl">
+    <bean id = "userDAO" class="UserDaoImpl">
         <property name="sessionFactory" ref = "hibernate5AnnotatedSessionFactory"/>
     </bean>
 

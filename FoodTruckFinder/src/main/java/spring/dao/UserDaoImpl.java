@@ -1,6 +1,7 @@
 package spring.dao;
 
 import database.HibernateUtil2;
+import hibernate.crud.operations.DbOperations;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -46,26 +47,25 @@ public class UserDaoImpl implements UserDao {
 
     public boolean validate(String username, String password) {
 
-        Transaction transaction = null;
-        User user = null;
-        try (Session session = this.sessionFactory.openSession()) {
-            // start a transaction
-            transaction = session.beginTransaction();
-            // get an user object
-            user = (User) session.createQuery("FROM User WHERE User.email = :username").setParameter("username", username)
-                    .uniqueResult();
+//        User user = null;
+//       Session session = this.sessionFactory.openSession();
+//
+//            List users = session.createQuery("FROM User WHERE User.email = :username ").setParameter("username", username).list();
+//            Object userObj = users.get(0);
 
-            if (user != null && user.getPassword().equals(password)) {
-                return true;
+        List viewUsers = DbOperations.displayRecords();
+        if (viewUsers != null & viewUsers.size() > 0) {
+            for (Object userObj : viewUsers ) {
+                System.out.println(userObj);
             }
-            // commit transaction
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
         }
+
+//            if (userObj != null ) {
+//                session.close();
+//                return true;
+//            }
+//
+//        session.close();
         return false;
     }
 
