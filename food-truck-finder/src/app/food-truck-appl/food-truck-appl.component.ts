@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms'
 
 @Component({
   selector: 'app-food-truck-appl',
@@ -7,8 +8,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./food-truck-appl.component.css']
 })
 export class FoodTruckApplComponent implements OnInit {
-
-  constructor(public router: Router) { }
+  productForm: FormGroup;
+  constructor(public router: Router, private fb:FormBuilder) {
+    this.productForm = this.fb.group({
+    name: '',
+    quantities: this.fb.array([]) ,
+  }); }
 
   ngOnInit(): void {
   }
@@ -23,6 +28,30 @@ export class FoodTruckApplComponent implements OnInit {
     console.log('Well this is where applying would work');
     this.router.navigate(['dashboard']);
     // the navigate() seams to want a then() after it. not sure why.
+  }
+
+  quantities() : FormArray {
+    return this.productForm.get("quantities") as FormArray
+  }
+
+  newQuantity(): FormGroup {
+    return this.fb.group({
+      name: '',
+      desc: '',
+      price: '',
+    })
+  }
+
+  addQuantity() {
+    this.quantities().push(this.newQuantity());
+  }
+
+  removeQuantity(i:number) {
+    this.quantities().removeAt(i);
+  }
+
+  onSubmit() {
+    console.log(this.productForm.value);
   }
 
 }

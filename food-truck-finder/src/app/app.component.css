@@ -1,9 +1,14 @@
 .center{
   position: absolute;
-  left: 50%;
-  margin-left: -400px;
   text-align: center;
   background-color: #557A95;
+  align-content: center;
+  width: 1000px;
+  height: 1000px;
+  left: 50%;
+  top: 50%;
+  margin-left: -500px;
+  margin-top: -400px;
 }
 
 
