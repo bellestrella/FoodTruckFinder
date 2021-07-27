@@ -1,13 +1,13 @@
 package hibernate.crud.operations;
 
-import models.User;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+
+import org.apache.log4j.Logger;
+import spring.model.User;
 
 import javax.persistence.Query;
 import java.util.ArrayList;
@@ -18,12 +18,12 @@ public class DbOperations {
     static Session sessionObj;
     static SessionFactory sessionFactoryObj;
 
-    public final static Logger logger = LogManager.getLogger(DbOperations.class);
+    public final static Logger logger = Logger.getLogger(DbOperations.class);
 
     // This Method Is Used To Create The Hibernate's SessionFactory Object
     private static SessionFactory buildSessionFactory() {
         // Creating Configuration Instance & Passing Hibernate Configuration File
-        Configuration configObj = new Configuration().addAnnotatedClass(DbOperations.class);
+        Configuration configObj = new Configuration().addAnnotatedClass(User.class);
         configObj.configure("hibernate.cfg.xml");
 
         // SServiceRegistry Is Being Used ... Need to update on version depending
@@ -80,7 +80,7 @@ public class DbOperations {
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            usersList = sessionObj.createQuery("FROM ").list();
+            usersList = sessionObj.createQuery("FROM User").list();
 
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
@@ -105,7 +105,7 @@ public class DbOperations {
             sessionObj.beginTransaction();
 
             // Creating Transaction Entity
-          /*   uObj = () sessionObj.get(.class, id);
+            User uObj = (User) sessionObj.get(User.class, id);
             uObj.setName("New Name");
             uObj.setEmail("New email");
             uObj.setPassword("New pass");
@@ -113,7 +113,7 @@ public class DbOperations {
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
-            logger.info("\n With Id?= " + id + " Is Successfully Updated In The Database!\n");
+            logger.info("\nUser With Id?= " + id + " Is Successfully Updated In The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -135,12 +135,12 @@ public class DbOperations {
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-       /*      useObj = findRecordById(id);
+            User useObj = findRecordById(id);
             sessionObj.delete(useObj);
-*/
+
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
-            logger.info("\n With Id?= " + id + " Is Successfully Deleted From The Database!\n");
+            logger.info("\nUser With Id?= " + id + " Is Successfully Deleted From The Database!\n");
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
                 logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -154,15 +154,15 @@ public class DbOperations {
         }
     }
     // Method 5: This Method To Find Particular Record In The Database Table
-    public static findRecordById (Integer find_id){
-     /*    findUserObj = null;
+    public static User findRecordById (Integer find_id){
+        User findUserObj = null;
         try {
             // Getting Session Object From SessionFactory
             sessionObj = buildSessionFactory().openSession();
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            findUserObj = () sessionObj.load(.class, find_id);
+            findUserObj = (User) sessionObj.load(User.class, find_id);
 
         } catch (Exception sqlException) {
             if (null != sessionObj.getTransaction()) {
@@ -182,7 +182,7 @@ public class DbOperations {
             // Getting Transaction Object From Session Object
             sessionObj.beginTransaction();
 
-            Query queryObj = sessionObj.createQuery("DELETE FROM ");
+            Query queryObj = sessionObj.createQuery("DELETE FROM User");
             queryObj.executeUpdate();
 
             // Committing The Transactions To The Database

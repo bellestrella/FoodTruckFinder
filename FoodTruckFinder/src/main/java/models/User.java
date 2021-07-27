@@ -1,3 +1,4 @@
+
 package models;
 
 import java.util.ArrayList;
@@ -23,8 +24,8 @@ public class User {
 
     // relationship is bidirectional, the mappedBy element must be used to specify the relationship field or property of
     // the entity that is the owner of the relationship.
-    @OneToMany(mappedBy = "user",cascade=CascadeType.PERSIST)
-    private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();
+   /* @OneToMany(mappedBy = "user",cascade=CascadeType.PERSIST)
+    private List<FoodTruck> foodtruck = new ArrayList<FoodTruck>();*/
 
     // build our parameterized constructor
     public User (String name, String email, String password, String type) {
@@ -76,6 +77,7 @@ public class User {
     public void setType(String type) {
         this.type = type;
     }
+/*
 
     public List<FoodTruck> getFoodtruck() {
         return foodtruck;
@@ -84,5 +86,6 @@ public class User {
     public void setFoodtruck(List<FoodTruck> foodtruck) {
         this.foodtruck = foodtruck;
     }
+*/
 
 }
