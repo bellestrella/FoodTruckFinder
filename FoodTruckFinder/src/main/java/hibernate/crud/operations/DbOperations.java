@@ -109,7 +109,7 @@ public class DbOperations {
             uObj.setName("New Name");
             uObj.setEmail("New email");
             uObj.setPassword("New pass");
-*/
+
 
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
@@ -172,7 +172,7 @@ public class DbOperations {
             sqlException.printStackTrace();
         }
         return findUserObj;
-*/
+
     }
     // Method 6: This Method Is Used To Delete All Records From The Database Table
     public static void deleteAllRecords () {
