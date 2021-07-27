@@ -90,18 +90,16 @@ public class Login extends HttpServlet {
         username = var[0];
         password = var[1];
 
+        status = loginDao.validate(username, password);
         System.out.println("Field username" + fieldUsername);
         System.out.println("Field Password" + fieldPassword);
 
-        if(username == fieldUsername && password == fieldPassword){
+        if(username.equals(fieldUsername) && (password.equals(fieldPassword))){
             System.out.println("True");
             status = true;
         }
-        try {
-            status = loginDao.validate(username, password);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+
         System.out.println("Username: " + username + " Password: " + password);
         if (status) {
             response.setContentType("application/json");
