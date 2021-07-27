@@ -1,6 +1,6 @@
 <div style="margin-left: -100px">
 
-  <h3>General food truck information</h3>
+  <h3>Register Your Food Truck!</h3>
 
   <form (submit)="apply()" [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <div style="display: grid;
@@ -18,6 +18,7 @@
     <input id="Address" type="text" placeholder="Address">
 
     </div>
+    <br>
     <h3>Hours of operation</h3>
   <br>
     <div style="display: grid;
@@ -48,9 +49,6 @@
     <input id="sundayend" type="text" placeholder="End"><br>
 
     </div>
-
-
-
 
     <br>
       <table class="table table-bordered" formArrayName="quantities">
