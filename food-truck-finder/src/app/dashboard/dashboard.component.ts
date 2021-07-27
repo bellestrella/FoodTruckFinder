@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     let loader = new Loader({
-      apiKey:  'INSERT YOUR GOOGLE API KEY HERE'
+      apiKey:  'INSERT YOUR GOOGLE API KEY HERE '
     })
 
     loader.load().then(() => {
