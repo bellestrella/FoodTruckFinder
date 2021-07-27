@@ -8,7 +8,7 @@ import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodTruckApplComponent } from './food-truck-appl/food-truck-appl.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+      HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
