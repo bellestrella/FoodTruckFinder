@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <property name="connection.url">jdbc:oracle:thin:@trkdb.cmtkalryuwt4.us-east-2.rds.amazonaws.com:1521:EMPDB</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">Java2021</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
+
+        <!--This allows us to run code but does not create already made tables-->
+        <!-- DB schema will be updated if needed -->
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Allows to see sql query in console window -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping class="models.User" />
+
+
+    </session-factory>
+</hibernate-configuration>

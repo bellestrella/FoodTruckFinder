@@ -2,8 +2,8 @@ package controller;
 
 import com.google.gson.Gson;
 import models.FoodTruckJSON;
+import org.springframework.stereotype.Component;
 import service.FoodtruckServiceJSON;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

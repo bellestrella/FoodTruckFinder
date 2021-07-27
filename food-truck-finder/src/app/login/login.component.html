@@ -1,11 +1,19 @@
-<h3>Login function</h3>
+<div style="margin-left: -100px">
 
-<form (submit)="login()">
+<h3>Login</h3>
 
-  <label for="username">Email Address:</label>
-  <input id="username" type="text" placeholder="email address">
-  <label for="pass">Password:</label>
-  <input id="pass" type="password" placeholder="password">
-  <input type="submit" value="Login">
+<form #form = "ngForm" (submit)="login(form.value)" >
+  <div style="display:grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      margin-left: -40px;
+      margin: auto;">
+    <label for="username"><h5>Email Address:</h5></label>
+  <input id="username" name="name" type="text" placeholder="email address" style="height: 30px" ngModel>
+    <label for="pass"><h5>Password:</h5></label>
+  <input id="pass" type="password" name="pass" placeholder="password" style="height: 30px" ngModel>
+  </div><br>
+  <input type="submit" value="Login" style="height: 30px; width: 50px">
 </form>
 
+</div>

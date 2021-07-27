@@ -1,67 +1,202 @@
-<p>A place for Food Trucks!</p>
+<br>
+<b>Click on a pin below to see a menu!</b>
+<br><br>
 <!-- Need an actual dashboard -->
 <div class="full" id="map" style="text-align: center">
 
 </div>
-
 <div [ngSwitch]="key">
 
 
-  <div class="full" id="menu1" *ngSwitchCase="'Rosy'">
-    <h3>Rosy's menu</h3>
-    <table>
-      <thead>
-      <td>Food Name</td>
-      <td>Ingredients?</td>
-      <td>Price?</td>
-      <td>Uhhh who knows</td>
-      </thead>
-      <tr><td>Roses</td><td>Rose water</td><td>4$</td><td>Smell the roses</td></tr>
-    </table>
+  <div class="full grid" id="menu1" *ngSwitchCase="'Rosy'">
+    <div class="grid-child" style="display: inline-block">
+      <h3>Rosy's menu</h3>
+      <table>
+        <thead>
+        <td>Name   </td>
+        <td>Ingredients  </td>
+        <td>Price</td>
+        </thead>
+        <tr><td>Roses</td><td>Rose water</td><td>4$</td></tr>
+      </table>
+    </div>
+    <br>
+    <div class="grid-child">
+      <h3>Hours</h3>
+      <table>
+        <thead>
+        <td>Day </td>
+        <td>Opens   </td>
+        <td>Closes </td>
+        </thead>
+        <tr><td>Monday</td><td>10:00am</td><td>4:00pm</td></tr>
+      </table>
+    </div>
+    <br>
+    <div>
+      <table>
+        <thead>
+        <td><h3>Review</h3></td>
+        </thead>
+        <tr><td>Best Mexican food in town!</td></tr>
+      </table>
+    </div>
+    <div style="margin-left: 20px">
+      <table>
+        <thead>
+        <td><h3>Rating</h3></td>
+        </thead>
+        <tr><td>5.0</td></tr>
+      </table>
+    </div>
   </div>
 
-  <div class="full" id="menu2" *ngSwitchCase="'Craft'">
-    <h3>Craft's Menu</h3>
-    <table>
-      <thead>
-      <td>Food Name</td>
-      <td>Ingredients?</td>
-      <td>Price?</td>
-      <td>Uhhh who knows</td>
-      </thead>
-      <tr><td>Crafts concoction</td><td>Craftiness</td><td>1$</td><td>craftsy</td></tr>
-    </table>
+  <div class="full grid" id="menu2" *ngSwitchCase="'Craft'">
+    <div>
+      <h3>Craft's Menu</h3>
+      <table>
+        <thead>
+        <td>Name   </td>
+        <td>Ingredients  </td>
+        <td>Price</td>
+        </thead>
+        <tr><td>Crafts concoction</td><td>Craftiness</td><td>1$</td></tr>
+      </table>
+    </div>
+    <br>
+    <div class="grid-child">
+      <h3>Hours</h3>
+      <table>
+        <thead>
+        <td>Day   </td>
+        <td>Opens   </td>
+        <td>Closes </td>
+        </thead>
+        <tr><td>Monday</td><td>10:00am</td><td>4:00pm</td></tr>
+      </table>
+    </div>
+    <br>
+    <div>
+      <table>
+        <thead>
+        <td><h3>Review</h3></td>
+        </thead>
+        <tr><td>Burnt my pizza :(</td></tr>
+      </table>
+    </div>
+    <div style="margin-left: 20px">
+      <table>
+        <thead>
+        <td><h3>Rating</h3></td>
+        </thead>
+        <tr><td>2.5</td></tr>
+      </table>
+    </div>
+
   </div>
-  <div class="full" id="menu3" *ngSwitchCase="'Valen'">
-    <h3>Valens Menu</h3>
-    <table>
-      <thead>
-      <td>Food Name</td>
-      <td>Ingredients?</td>
-      <td>Price?</td>
-      <td>Uhhh who knows</td>
-      </thead>
-      <tr><td>Valentinos</td><td>Mystery</td><td>99$</td><td>yep</td></tr>
-    </table>
+  <div class="full grid" id="menu3" *ngSwitchCase="'Valen'">
+    <div>
+      <h3>Valentinos Menu</h3>
+      <table>
+        <thead>
+        <td>Name   </td>
+        <td>Ingredients   </td>
+        <td>Price</td>
+        </thead>
+        <tr><td>Valentinos</td><td>Mystery</td><td>99$</td></tr>
+      </table>
+    </div>
+    <br>
+    <div class="grid-child">
+      <h3>Hours</h3>
+      <table>
+        <thead>
+        <td>Day   </td>
+        <td>Opens   </td>
+        <td>Closes </td>
+        </thead>
+        <tr><td>Monday</td><td>10:00am</td><td>4:00pm</td></tr>
+      </table>
+    </div>
+    <br>
+    <div>
+      <table>
+        <thead>
+        <td><h3>Review</h3></td>
+        </thead>
+        <tr><td>I liked it, I'll come back</td></tr>
+      </table>
+    </div>
+    <div style="margin-left: 20px">
+      <table>
+        <thead>
+        <td><h3>Rating</h3></td>
+        </thead>
+        <tr><td>3.0</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="full grid" id="menu4" *ngSwitchCase="'Revo'">
+    <div>
+      <h3>Viva La Revolution Menu</h3>
+      <table>
+        <thead>
+        <td>Name   </td>
+        <td>Ingredients  </td>
+        <td>Price</td>
+        </thead>
+        <tr><td>Major Revolution</td><td>Gunpowder</td><td>Freedom</td></tr>
+      </table>
+    </div>
+    <br>
+    <div class="grid-child">
+      <h3>Hours</h3>
+      <table>
+        <thead>
+        <td>Day   </td>
+        <td>Opens   </td>
+        <td>Closes </td>
+        </thead>
+        <tr><td>Monday</td><td>10:00am</td><td>4:00pm</td></tr>
+      </table>
+    </div>
+    <br>
+    <div>
+      <table>
+        <thead>
+        <td><h3>Review</h3></td>
+        </thead>
+        <tr><td>Good service, mediocre food</td></tr>
+      </table>
+    </div>
+    <div >
+      <table>
+        <thead>
+        <td><h3>Rating</h3></td>
+        </thead>
+        <tr><td>4.0</td></tr>
+      </table>
+    </div>
+
   </div>
 
-  <div class="full" id="menu4" *ngSwitchCase="'Revo'">
-    <h3>Viva La Revolution Menu</h3>
-    <table>
-      <thead>
-      <td>Food Name</td>
-      <td>Ingredients?</td>
-      <td>Price?</td>
-      <td>Uhhh who knows</td>
-      </thead>
-      <tr><td>Major Revolution</td><td>Gunpowder</td><td>Freedom</td><td>?</td></tr>
-    </table>
-  </div>
 
-  <div *ngSwitchDefault>  <br>Click on a pin above to see the menu!</div>
-  <br><br>
-  <form (submit)="appl()">
 
-    <input type="submit" value="Have a Food Truck? Register here!">
-  </form>
+
+  <div *ngSwitchDefault>  <br></div>
+
+
+
 </div>
+<br><br>
+
+<form (submit)="appl()" >
+  <input type="submit" value="Have a Food Truck? Register here!">
+</form>
+<br>
+<a class="btn btn-primary" href="/login" role="button">Logout</a>
+
+
+
+

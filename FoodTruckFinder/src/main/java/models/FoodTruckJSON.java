@@ -1,81 +1,87 @@
 // Foodtruck Java Bean class
 package models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FoodTruckJSON {
 
-        int id;
-        String name;
-        String display_phone;
-        String address;
-        double rating;
-        String price;
-        String type;
+        int truckID;
+        String truckName;
+        String truckAddress;
+        String truckPhoneNumber;
+        double truckRating;
+        String foodPrice;
+        String foodType;
 
-    public FoodTruckJSON(int id, String name, String display_phone, String address, double rating, String price, String type) {
-        this.id = id;
-        this.name = name;
-        this.display_phone = display_phone;
-        this.address = address;
-        this.rating = rating;
-        this.price = price;
-        this.type = type;
-    }
+        public FoodTruckJSON(int truckID, String truckName, String truckAddress, String truckPhoneNumber,
+                         double truckRating, String foodPrice, String foodType) {
+            this.truckID = truckID;
+            this.truckName = truckName;
+            this.truckAddress = truckAddress;
+            this.truckPhoneNumber = truckPhoneNumber;
+            this.truckRating = truckRating;
+            this.foodPrice = foodPrice;
+            this.foodType = foodType;
 
-    public int getId() {
-        return id;
-    }
+        }
+        public FoodTruckJSON(){}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+        public int getTruckID() {
+            return truckID;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public void setTruckID(int truckID) {
+            this.truckID = truckID;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public String getTruckName() {
+            return truckName;
+        }
 
-    public String getDisplay_phone() {
-        return display_phone;
-    }
+        public void setTruckName(String truckName) {
+            this.truckName = truckName;
+        }
 
-    public void setDisplay_phone(String display_phone) {
-        this.display_phone = display_phone;
-    }
+        public String getTruckAddress() {
+            return truckAddress;
+        }
 
-    public String getAddress() {
-        return address;
-    }
+        public void setTruckAddress(String truckAddress) {
+            this.truckAddress = truckAddress;
+        }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+        public String getTruckPhoneNumber() {
+            return truckPhoneNumber;
+        }
 
-    public double getRating() {
-        return rating;
-    }
+        public void setTruckPhoneNumber(String truckPhoneNumber) {
+            this.truckPhoneNumber = truckPhoneNumber;
+        }
 
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
+        public double getTruckRating() {
+            return truckRating;
+        }
 
-    public String getPrice() {
-        return price;
-    }
+        public void setTruckRating(double truckRating) {
+            this.truckRating = truckRating;
+        }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+        public String getFoodPrice() {
+            return foodPrice;
+        }
 
-    public String getType() {
-        return type;
-    }
+        public void setFoodPrice(String foodPrice) {
+            this.foodPrice = foodPrice;
+        }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+        public String getFoodType() {
+            return foodType;
+        }
+
+        public void setFoodType(String foodType) {
+            this.foodType = foodType;
+        }
 }
 
 

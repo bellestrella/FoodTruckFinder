@@ -27,6 +27,8 @@ export class DashboardComponent implements OnInit {
         center: {lat: 30.26, lng: -97.74},
         zoom: 10
       })
+
+
       var Rositas = new google.maps.Marker({
         position: new google.maps.LatLng(30.242870,-97.729590),
         map: map,
@@ -34,16 +36,22 @@ export class DashboardComponent implements OnInit {
         // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Rosy = new google.maps.InfoWindow({
-        content: "<h1>This is Rositas</h1><h2>Mexican Food</h2>"
+        content: "<h5>Rositas Food Truck</h5><br><h6>Address: 1801 E. Riverside Dr, Austin</h6><br><h6>Food Type: Mexican</h6>"
+
       });
       Rositas.set("id", 1);
 
+      var prevMarker = Rosy;
       Rositas.addListener("click", () => {
+        prevMarker.close();
         map.setZoom(12);
         map.setCenter(Rositas.getPosition()!);
         Rosy.open(map, Rositas);
+        prevMarker=Rosy;
         this.key = "Rosy";
       });
+
+
 
 
       var Craft = new google.maps.Marker({
@@ -52,13 +60,15 @@ export class DashboardComponent implements OnInit {
         title: "Craft" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Crafter = new google.maps.InfoWindow({
-        content: "<h1>This is Craft</h1>"
+        content: "<h5>Craft Woodfire Pizza</h5><br><h6>Address: 3901 Promontory Point Dr, Austin, TX 78744</h6><br><h6>Food Type: Pizza</h6>"
       });
       Craft.addListener("click", () => {
+        prevMarker.close();
         map.setZoom(12);
         map.setCenter(Craft.getPosition()!);
         Crafter.open(map, Craft);
         this.key = "Craft";
+        prevMarker=Crafter;
       });
 
       var Valentinas = new google.maps.Marker({
@@ -67,13 +77,15 @@ export class DashboardComponent implements OnInit {
         title: "Valentinas" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Valen = new google.maps.InfoWindow({
-        content: "<h1>This is Valentinas</h1>"
+        content: "<h5>Valentina’s Tex Mex BBQ</h5><br><h6>Address: 11500 Menchaca Rd, Austin TX 78748</h6><br><h6>Food Type: Tex-Mex|BBQ</h6>"
       });
       Valentinas.addListener("click", () => {
+        prevMarker.close();
         map.setZoom(12);
         map.setCenter(Valentinas.getPosition()!);
         Valen.open(map, Valentinas);
         this.key = "Valen";
+        prevMarker=Valen;
       });
 
       var Revolution = new google.maps.Marker({
@@ -82,13 +94,15 @@ export class DashboardComponent implements OnInit {
         title: "Revolution" // This path is the custom pin to be shown. Remove this line and the proceeding comma to use default pin
       });
       var Revo = new google.maps.InfoWindow({
-        content: "<h1>This is Revolution</h1>"
+        content: "<h5>Revolution Vegan Kitchen</h5><br><h6>Address: 7800 S 1st St, Austin, TX 78745 </h6><br><h6>Food Type: Vegan</h6>"
       });
       Revolution.addListener("click", () => {
+        prevMarker.close();
         map.setZoom(12);
         map.setCenter(Revolution.getPosition()!);
         Revo.open(map, Revolution);
         this.key = "Revo";
+        prevMarker=Revo;
       });
 
 
