@@ -1,46 +1,39 @@
-# FoodTruckFinder
-Food Truck Finder 🍕🍗
-Description: This application is made to help users find specific or general food options that food trucks offer that may not have a website or are on google maps. Can offer location, menu, food type filtering. 
-Technologies: Angular, Spring
-Applicable APIs: Google Maps, Yelp
+# PROJECT NAME
 
-User Stories
-As a user I want to be able to create an account on the website
+## Project Description
 
-As a user I want to be    able to login
+Find food trucks located in the Austin Texas area. Many food trucks are hard to find or it’s difficult to find details about them and our application aims to fix that issue. On our application you can see the hours of operation, where the food trucks are located, the menu, and reviews about that food truck. You can create an account to be able to favorite your favorite food trucks and be able to create reviews for others using the application to see as well.
 
-As a user I want to be able to logout
+## Technologies Used
 
-As a user I want to be able to save my favourite food truck
+* Java
+* Spring Framework
+* Angular 2+
+* HTML
+* CSS
+* TypeScript
+* Hibernate
+* Log4J
+* JUnit
+* SQL
 
-As a user I want to be able to view a map that contains the locations of food trucks
+## Features
 
-As a user I want to be able to filter down the map so that I can find specific food trucks
+* Login with only valid credentials
+* Click marker pins on a google map that display basic restaurant information
+* Logout
 
-As a user I want to be able to see a food trucks menus
+To-do list:
+* Filter restaurants bye food type
+* Implement using forms for adding food trucks to the database
 
-As a user I want to be able to see a food trucks reviews
-
-*As a user I want to be able to order food from a food truck
-
-*As a user I want to be able to save my card information for easy checkout
-
-*User stories that may be added later if time permits
-
-
-As a manger I want to add food trucks 
-
-As a manger I want to remove food trucks
-
-As a manager I want to update food truck information
-
-As a manager I want to be able to set the hours of a food truck being opened (and if they’ll be closed on certain days)
-
-As a manager I want to verify food truck owners
+## Getting Started
+   
+> ng serve --open (To run Angular project)
 
 
-As a food truck owner I want to be verified - only once
+## Contributors
 
-As a food truck owner I want to change my menu
+> Edwin Muñoz, Houston Koester, Peter Fowler
 
-As a food truck owner I want to respond to my reviews
+
